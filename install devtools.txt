@@ -1,0 +1,9 @@
+# Currently, Covidestim is not availble on CRAN
+# install.packages("covidestim")
+
+# Install the development version from GitHub. This requires that the
+# 'devtools' package be installed.
+if (!require("devtools")) {
+  install.packages("devtools")
+}
+devtools::install_github("covidestim/covidestim")
