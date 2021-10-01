@@ -1,0 +1,12 @@
+library(covidestim)
+
+# Set up a model on 120 days of example NYC data
+cfg <- covidestim(ndays = 120, region = 'New York', pop_size = get_pop('New York')) +
+  input_cases(example_nyc_data('cases')) +
+  input_deaths(example_nyc_data('deaths'))
+
+result <- run(cfg)
+
+# Get a data.frame of all timeseries outcomes, and some overview plots
+resultSummary <- summary(result)
+resultGraphs  <- viz(result)
